@@ -1,13 +1,20 @@
-## Base Image
 FROM registry.access.redhat.com/ubi7/nodejs-12 AS builder
-
-## Folder to put Source Code and run commands on
+# Stage 1: build the app
 WORKDIR /opt/app-root/src
 
 COPY package.json /opt/app-root/src
-RUN npm install @angular/cli && npm install
+RUN npm install
 COPY . /opt/app-root/src
-EXPOSE 4200
 
-## Run application, listening on all interfaces and making it accessible from the host machine
-CMD ["ng", "serve","--configuration", "development", "--host", "0.0.0.0","--port","4200","--disable-host-check","--poll"]
+RUN ng build --configuration production
+
+# Stage 2: serve it with nginx
+FROM nginx AS deploy
+
+LABEL maintainer="Max Dargatz"
+
+COPY --from=builder /opt/app-root/src/dist/news-frontend /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/settings.template.json > /usr/share/nginx/html/assets/settings.json && exec nginx -g 'daemon off;'"]
