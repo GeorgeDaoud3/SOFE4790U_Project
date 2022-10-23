@@ -1,6 +1,7 @@
 FROM docker.io/openjdk:11.0 AS build
 WORKDIR /app
 COPY . /app
+RUN chmod +x mvnw
 RUN ./mvnw package -Dmaven.test.skip=true
 
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.3 
