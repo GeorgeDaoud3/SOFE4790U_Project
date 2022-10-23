@@ -6,7 +6,7 @@ metadata:
   name: news-frontend
   #namespace: admin-che
 spec:
-  type: NodePort
+  type: Loadbalancer
   ports:
     - port: 80
       targetPort: 80
