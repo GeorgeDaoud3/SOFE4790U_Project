@@ -15,7 +15,7 @@ spec:
         app: news-frontend
     spec:
       containers:
-        - image: us.gcr.io/graphite-sphere-362322/news-frontend
+        - image: quay.io/k8snativedev/news-frontend
           name: news-frontend
           ports:
             - containerPort: 80
