@@ -37,3 +37,8 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+          env:
+            - name: NODE_IP
+              value: 10.80.1.98
+            - name: NODE_PORT
+              value: 30000
