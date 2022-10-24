@@ -7,7 +7,7 @@ WORKDIR /opt/app-root/src
 COPY package.json /opt/app-root/src
 RUN npm install @angular/cli && npm install
 COPY . /opt/app-root/src
-EXPOSE 80
+EXPOSE 5050
 
 ## Run application, listening on all interfaces and making it accessible from the host machine
-CMD ["ng", "serve","--configuration", "development", "--host", "0.0.0.0","--port","80","--disable-host-check","--poll"]
+CMD ["ng", "serve","--configuration", "development", "--host", "0.0.0.0","--port","5050","--disable-host-check","--poll"]
