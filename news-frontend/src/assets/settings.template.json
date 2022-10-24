@@ -1,3 +1,4 @@
 {
-    "apiUrl": "http://${NODE_IP}:${NODE_PORT}"  
+    "apiUrl2": "http://${NODE_IP}:${NODE_PORT}"  
+	"apiUrl": "http://news-backend:8080"  
 }
