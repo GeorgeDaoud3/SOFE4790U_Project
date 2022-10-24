@@ -32,13 +32,13 @@ spec:
         app: news-frontend
     spec:
       containers:
-        - image: us.gcr.io/graphite-sphere-362322/news-frontend
+        - env:
+            - name: NODE_IP
+              value: "10.80.1.98"
+            - name: NODE_PORT
+              value: 30000
+          image: us.gcr.io/graphite-sphere-362322/news-frontend
           name: news-frontend
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-          env:
-            - name: NODE_IP
-              value: 10.80.1.98
-            - name: NODE_PORT
-              value: 30000
