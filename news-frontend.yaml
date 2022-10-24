@@ -36,7 +36,7 @@ spec:
             - name: NODE_IP
               value: news-backend
             - name: NODE_PORT
-              value: 8080
+              value: "8080"
           image: us.gcr.io/graphite-sphere-362322/news-frontend
           name: news-frontend
           imagePullPolicy: Always
