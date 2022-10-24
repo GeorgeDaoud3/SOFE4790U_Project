@@ -34,11 +34,9 @@ spec:
       containers:
         - env:
             - name: NODE_PORT
-              value: "30000"
+              value: "8080"
             - name: NODE_IP
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.hostIP
+              value: "news-backend"
           image: us.gcr.io/graphite-sphere-362322/news-frontend
           name: news-frontend
           imagePullPolicy: Always
