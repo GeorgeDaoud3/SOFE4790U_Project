@@ -8,6 +8,9 @@ COPY package.json /opt/app-root/src
 RUN npm install @angular/cli && npm install
 COPY . /opt/app-root/src
 EXPOSE 5050
+## export the environment variables
+CMD ["/bin/sh",  "-c",  "envsubst < /opt/app-root/src/src/assets/settings.template.json > /opt/app-root/src/src/assets/settings.json"]
 
 ## Run application, listening on all interfaces and making it accessible from the host machine
 CMD ["ng", "serve","--configuration", "development", "--host", "0.0.0.0","--port","5050","--disable-host-check","--poll"]
+
