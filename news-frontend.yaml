@@ -34,7 +34,7 @@ spec:
       containers:
         - env:
             - name: NODE_PORT
-              value: "8081"
+              value: "8080"
             - name: NODE_IP
               value: "34.95.34.124"
           image: us.gcr.io/graphite-sphere-362322/news-frontend

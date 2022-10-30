@@ -29,9 +29,9 @@ export class NewsService {
 		.set('sw.lng', bounds.getSouthWest().lng)
 		.set('ne.lat', bounds.getNorthEast().lat)
 		.set('ne.lng', bounds.getNorthEast().lng) };
-	const marker = L.marker([0, 0]);
+	/*const marker = L.marker([0, 0]);
 	marker.bindPopup( `<div>Title: ${ this.settingService.settings.apiUrl+ "/news" }</div>` );
-	marker.addTo(map);
+	marker.addTo(map);*/
 	//this.http.get(this.capitals).subscribe((res: any) => {
     this.http.get(this.settingService.settings.apiUrl + "/news", options).subscribe((res: any) => {
       for (const c of res) {
