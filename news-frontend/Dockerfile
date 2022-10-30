@@ -9,6 +9,7 @@ RUN npm install @angular/cli && npm install
 COPY . /opt/app-root/src
 EXPOSE 5050
 ## export the environment variables
+CMD ["/bin/sh",  "-c",  "chmod ugo+w /opt/app-root/src/src/assets/"]
 CMD ["/bin/sh",  "-c",  "envsubst < /opt/app-root/src/src/assets/settings.template.json > /opt/app-root/src/src/assets/settings.json"]
 
 ## Run application, listening on all interfaces and making it accessible from the host machine
