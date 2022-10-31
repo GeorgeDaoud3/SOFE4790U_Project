@@ -31,7 +31,7 @@ spec:
         app: location-extractor
     spec:
       containers:
-        - image: us.gcr.io/graphite-sphere-362322/location-extractor
+        - image: us.gcr.io/<project_ID>/location-extractor   #todo: replace <project_ID> with your actual project_ID 
           name: location-extractor
           imagePullPolicy: Always
           ports:

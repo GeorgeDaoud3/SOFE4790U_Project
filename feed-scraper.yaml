@@ -20,5 +20,5 @@ spec:
             - -Dscraper.feed.backend.host=news-backend
             - -jar
             - /usr/local/lib/feed-scraper.jar
-          image: us.gcr.io/graphite-sphere-362322/feed-scraper
+          image: us.gcr.io/<project_ID>/feed-scraper    #todo: replace <project_ID> with your actual project_ID 
           name: feed-scraper

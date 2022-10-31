@@ -37,7 +37,7 @@ spec:
               value: http://location-extractor:8081/get_loc
             - name: quarkus.datasource.jdbc.url
               value: jdbc:postgresql://postgis:5400/news?user=postgres&password=banane
-          image: us.gcr.io/graphite-sphere-362322/news-backend
+          image: us.gcr.io/<project_ID>/news-backend          #todo: replace <project_ID> with your actual project_ID 
           name: news-backend
           imagePullPolicy: Always
           ports:

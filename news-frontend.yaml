@@ -36,8 +36,8 @@ spec:
             - name: NODE_PORT
               value: "8080"
             - name: NODE_IP
-              value: "34.95.34.124"
-          image: us.gcr.io/graphite-sphere-362322/news-frontend
+              value: "<backend IP address>"                       #todo: replace <backend IP address> with the IP address of the backend component
+          image: us.gcr.io/<project_ID>/news-frontend             #todo: replace <project_ID> with your actual project_ID 
           name: news-frontend
           imagePullPolicy: Always
           ports:
